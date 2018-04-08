@@ -1,0 +1,5 @@
+2018/4/6
+(1)创建core.module.ts
+    多语言
+    import { TranslateModule, TranslateLoader, TranslateStaticLoader } from 'ng2-translate';
+    

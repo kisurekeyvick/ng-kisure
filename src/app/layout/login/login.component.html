@@ -1,0 +1,31 @@
+<div class="container-flud login-screen">
+    <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '14px' }"></ngx-loading>
+    
+    <div class="login-form-container">
+        <h3 class="center-block sys-title">Kisure Key VicK</h3>
+        <form #form="ngForm" (ngSubmit)="submit()" class="form-horizontal login-form" role="form">
+            <div class="form-group">
+                <div class="col-xs-12">
+                    <input *InputError="user.validationErrors['userName']" name="userName" type="text" class="form-control" placeholder="{{'login.userName' | translate}}" [(ngModel)]="user.userName"> 
+                    <div *ngIf="!canLogin">{{'login.error' | translate}}</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-xs-12">
+                    <input *InputError="user.validationErrors['password']" name="password" type="password" class="form-control" placeholder="{{'login.password' | translate}}" [(ngModel)]="user.password">
+                    <div *ngIf="!canLogin">{{'login.error' | translate}}</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-xs-12">
+                    <button type="submit" class="btn btn-success btn-block" (click)="login()">{{'login.login' | translate}}</button>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-xs-4 pull-right">
+                    <a href="javascript:void(0);" (click)="forgetPwd()" class="btn-link btn-block">{{'userLogin.forgotPass' | translate}}</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
